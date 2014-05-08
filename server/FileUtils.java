@@ -1,3 +1,4 @@
+package edu.iub.cloud.pr;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -44,12 +45,15 @@ public class FileUtils {
 		try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter(FILE_NAME , true));) {
 			if(iteration == 1){
 				fileWriter.write("********************************** BEGIN STATS -"+ getCurrentTime() + "  *************************************");
+				fileWriter.write("\n");
 				numberOfRecords = stats.getRecordWritten();
 			}
 			fileWriter.write("^^^^^^^^^^^^^^^^^^^^^^^^ Stats for iteration -"
 					+ iteration + " ^^^^^^^^^^^^^^^^^^^^^^^^");
+			fileWriter.write("\n");
 			fileWriter.write("Time taken for this iteration :: "
 					+ stats.getDuration());
+			fileWriter.write("\n");
 			 totalTimeTaken += stats.getDuration();
 			jobStats = stats.getJobGraph().getJobList();
 			for (JobStats jobStat : jobStats) {

@@ -1,3 +1,4 @@
+package edu.iub.cloud.pr;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -87,7 +88,7 @@ public class PageRank {
 			properties.put("noOfURLs", numberOfURLs);
 			properties.put("dampingFactor", dampingFactor);
 			properties.put("inputFile", inputFile);
-			properties.put("outputFile", iterationOutputFile+"_1");
+			properties.put("outputFile", iterationOutputFile+"1");
 			for (int iteration = 1; iteration <= Integer
 					.parseInt(numberOfIterations); iteration++) {
 				logger.info("Running PageRank for iteration - " + iteration);
@@ -117,7 +118,7 @@ public class PageRank {
 			String numberOfIterations = args[2];
 			String inputFile = args[3];
 			String outputFile = args[4];
-			String iterationOutputFile = outputFile+"/iteration";
+			String iterationOutputFile = outputFile+"_iter/";
 
 			PageRank pageRank = new PageRank(numberOfIterations);
 			pageRank.runPageRankScript(inputFile, dampingFactor,
