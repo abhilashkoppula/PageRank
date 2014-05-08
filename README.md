@@ -15,8 +15,9 @@ Compilation
            export CLASSPATH=$CLASSPATH:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/https/*:
            export CLASSPATH=$CLASSPATH:$HADOOP_CONF_DIR:$HADOOP_HOME/share/hadoop/yarn/*:$PIG_HOME/pig-0.12.1.jar:.
 
-+ Compile the PageRank.java file
++ Compile the FileUtils.java and PageRank.java 
            
+           javac FileUtils.java
            javac PageRank.java
 
 Running
