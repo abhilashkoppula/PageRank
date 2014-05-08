@@ -10,6 +10,8 @@ import org.apache.pig.PigServer;
 import org.apache.pig.backend.executionengine.ExecException;
 import org.apache.pig.tools.pigstats.PigStats;
 
+import edu.iub.cloud.pr.FileUtils;
+
 
 /**
  * Implementation of PageRank in Pig Embeded in Java
@@ -96,8 +98,9 @@ public class PageRank {
 				logger.info("Writing stats for iteration - " + iteration);
 				fileUtils.writeToFile(PigStats.get(), iteration);
 				properties.put("inputFile", iterationOutputFile + iteration);
-				properties.put("outputFile", iterationOutputFile + iteration);	
+				properties.put("outputFile", iterationOutputFile + (iteration+1));	
 			}
+			fileUtils.writeSummary();
 
 		} catch (Exception ex) {
 			logger.error("Error while running PageRank.pig script " + ex.getMessage());

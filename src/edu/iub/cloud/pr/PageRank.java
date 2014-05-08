@@ -64,7 +64,7 @@ public class PageRank {
 	 */
 	public void runOutputScript(String iterationOutputFile , String outputDirectory) {
 		logger.info("Running Ranking.pig script");
-		properties.put("outputFile", iterationOutputFile+"_"+numberOfIterations);
+		properties.put("outputFile", iterationOutputFile+numberOfIterations);
 		properties.put("outputDirectory", outputDirectory);
 		try {
 			pigServer.registerScript("Rankings.pig", properties);
@@ -97,9 +97,9 @@ public class PageRank {
 				logger.info("Writing stats for iteration - " + iteration);
 				fileUtils.writeToFile(PigStats.get(), iteration);
 				properties.put("inputFile", iterationOutputFile + iteration);
-				properties.put("outputFile", iterationOutputFile + iteration);	
+				properties.put("outputFile", iterationOutputFile + (iteration+1));	
 			}
-
+			fileUtils.writeSummary();
 		} catch (Exception ex) {
 			logger.error("Error while running PageRank.pig script " + ex.getMessage());
 		}
