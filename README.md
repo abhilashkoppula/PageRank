@@ -3,7 +3,7 @@ PageRank
 
 Page Rank algorithm implementation in pig
 
-For the ease of running on the remote server , all the files are copied in server directory . SCP the server directory to remote server and follow below instructions
+For the ease of running on the remote server , all the files are copied in [**server**][server] directory . SCP the server directory to remote server and follow below instructions
 
 
 Compilation
@@ -47,5 +47,5 @@ Running
 
 
 
-
+[server]:https://github.com/abhilashkoppula/PageRank/tree/master/server
 [SALSA]:http://salsahpc.indiana.edu/csci-p434-fall-2013/apps/PageRankInput/           
