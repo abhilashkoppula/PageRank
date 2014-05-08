@@ -63,7 +63,7 @@ public class PageRank {
 	 */
 	public void runOutputScript(String iterationOutputFile , String outputDirectory) {
 		logger.info("Running Ranking.pig script");
-		properties.put("outputFile", iterationOutputFile+"_"+numberOfIterations);
+		properties.put("outputFile", iterationOutputFile+numberOfIterations);
 		properties.put("outputDirectory", outputDirectory);
 		try {
 			pigServer.registerScript("Rankings.pig", properties);
